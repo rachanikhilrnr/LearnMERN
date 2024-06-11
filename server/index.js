@@ -6,8 +6,14 @@ const postModel = require('./models/posts');
 
 const PORT = 5000;
 
+const corsOptions = {
+    origin:'*',
+    methods:'GET,PUT,POST',
+    credentials:true
+}
+
 const app = express();
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 const connect = mongoose.connect("mongodb+srv://21955a1206:nikhil1528@ecommerce.zoovig6.mongodb.net/Travel?retryWrites=true&w=majority&appName=Ecommerce")
