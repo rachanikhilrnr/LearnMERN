@@ -15,13 +15,13 @@ function App(){
     const[desc,setDesc] = useState();
 
     useEffect(() => {
-        axios.get("http://localhost:5000/home")
+        axios.get("https://learn-mern-backend.vercel.app/home")
         .then((content) => setPost(content.data))
         .catch((err) => console.log(err));
     },[post]);
 
     const submit = () => {
-        axios.post("http://localhost:5000/home",{username,start,end,from,to,cost,percnt,desc})
+        axios.post("https://learn-mern-backend.vercel.app/home",{username,start,end,from,to,cost,percnt,desc})
         .then(() => console.log("Posted Successfully"))
         .catch((err) => console.log(err));
     }
